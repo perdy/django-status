@@ -73,6 +73,16 @@ Celery stats
 
 Settings
 ========
+STATUS_URL_PREFIX
+-----------------
+Status url prefix.
+Example::
+
+    STATUS_URL_PREFIX = "foobar"
+
+Default::
+    STATUS_URL_PREFIX = "api"
+
 STATUS_CHECK_PROVIDERS
 ----------------------
 List of additional check providers. Each provider consists in a tuple of name, function complete path, args and kwargs.
@@ -98,4 +108,3 @@ List of hostname from celery workers to be checked.
 Default::
 
     STATUS_CELERY_WORKERS = ()
-

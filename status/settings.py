@@ -15,6 +15,8 @@ CACHES = settings.CACHES
 # Project path defined in Django settings
 BASE_DIR = getattr(settings, 'BASE_DIR', None)
 
+URL_PREFIX = getattr(settings, 'STATUS_URL_PREFIX', 'api')
+
 # Celery application
 CELERY_WORKERS = getattr(settings, 'STATUS_CELERY_WORKERS', ())
 
@@ -32,4 +34,3 @@ if CELERY_WORKERS:
         ('celery', 'status.check_providers.celery', None, {'workers': CELERY_WORKERS}),
         ('celery/stats', 'status.check_providers.celery_stats', None, {'workers': CELERY_WORKERS}),
     )
-

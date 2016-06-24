@@ -9,11 +9,12 @@ from status import settings
 
 urlpatterns = patterns('')
 
-providers = [url(r'^api/{}/?$'.format(a),
+app_name = 'status'
+providers = [url(r'^{}/?$'.format(a),
                  ProviderAPIView.as_view(provider=p, provider_args=args, provider_kwargs=kwargs),
-                 name='api_{}'.format(a))
+                 name=a)
              for a, p, args, kwargs in settings.CHECK_PROVIDERS]
 
 urlpatterns += providers
 
-urlpatterns += [url(r'^api/?$', RootAPIView.as_view())]
+urlpatterns += [url(r'^$', RootAPIView.as_view())]

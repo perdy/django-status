@@ -45,31 +45,31 @@ By default **Django status** provides the follow checks:
 
 Ping
     A ping to application.
-    URL: /api/ping
+    URL: /ping
 
 Code
     Source code stats such as current active branch, last commit, if debug is active...
-    URL: /api/code
+    URL: /code
 
 Databases
     Check if databases are running.
-    URL: /api/databases
+    URL: /databases
 
 Databases stats
     Show stats for all databases.
-    URL: /api/databases/stats
+    URL: /databases/stats
 
 Caches
     Check if caches are running.
-    URL: /api/caches
+    URL: /caches
 
 Celery
     Check if celery workers defined in settings are running.
-    URL: /api/celery
+    URL: /celery
 
 Celery stats
     Show celery worker stats.
-    URL: /api/celery/stats
+    URL: /celery/stats
 
 Settings
 ========
@@ -98,4 +98,3 @@ List of hostname from celery workers to be checked.
 Default::
 
     STATUS_CELERY_WORKERS = ()
-

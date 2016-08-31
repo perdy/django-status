@@ -69,7 +69,7 @@ class RootAPIView(APIView):
         super(RootAPIView, self).__init__()
 
     def get(self, request, *args, **kwargs):
-        context = {name: request.build_absolute_uri(reverse("api_{}".format(name))) for name, _, _, _ in self.providers}
+        context = {name: request.build_absolute_uri(reverse("status:%s" % name)) for name, _, _, _ in self.providers}
         return self.render_to_response(context)
 
 

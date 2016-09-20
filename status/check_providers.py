@@ -3,13 +3,13 @@
 Built-in check providers.
 """
 import datetime
-from django.db import connections, OperationalError
-from django.core.cache import caches as django_caches, InvalidCacheBackendError
+
+from django.core.cache import caches as django_caches
+from django.db import connections
 from git import Repo
 from git.exc import InvalidGitRepositoryError
 
 from status.settings import CACHES, DEBUG, BASE_DIR
-
 from status.utils import FakeChecker
 
 try:

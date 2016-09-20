@@ -74,7 +74,7 @@ def databases(*args, **kwargs):
         try:
             connection.connect()
             status[connection.alias] = connection.is_usable()
-        except OperationalError:
+        except:
             status[connection.alias] = False
 
     return status
@@ -90,10 +90,9 @@ def databases_stats(*args, **kwargs):
     for connection in connections.all():
         try:
             connection.connect()
-        except OperationalError:
-            is_usable = False
-        else:
             is_usable = connection.is_usable()
+        except:
+            is_usable = False
         finally:
             stats[connection.alias] = {
                 'vendor': connection.vendor,
@@ -123,7 +122,7 @@ def caches(*args, **kwargs):
             cache = django_caches[alias]
             cache.set('django_status_test_cache', value)
             status[alias] = True
-        except InvalidCacheBackendError:
+        except:
             status[alias] = False
 
     return status

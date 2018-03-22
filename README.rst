@@ -1,3 +1,5 @@
+THIS PROJECT IS DEPRECATED. Check [health-check](https://github.com/perdy/health-check) as it's the follow up.
+
 =============
 Django Status
 =============
